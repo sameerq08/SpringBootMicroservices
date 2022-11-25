@@ -2,7 +2,6 @@ package com.dailycodebuffer.user.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,4 +20,8 @@ public class User {
     private String lastName;
     private String email;
     private Long departmentId;
+
+    public Long getDepartmentId() {
+        return departmentId;
+    }
 }

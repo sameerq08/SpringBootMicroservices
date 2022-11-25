@@ -23,6 +23,8 @@ public class UserService {
         return userRepository.save(user);
     }
 
+
+
     public ResponseTemplateVO getUserWithDepartment(Long userId) {
         //log.info("Inside getUserWithDepartment of UserService");
         // Mapping User and Department and respond to get request
