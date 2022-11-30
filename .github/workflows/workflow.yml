@@ -29,10 +29,10 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-		server-id: docker.io
-		server-username: MAVEN_USERNAME
-		server-password: MAVEN_PASSWORD
-        distribution: 'temurin'
+	server-id: docker.io
+	server-username: MAVEN_USERNAME
+	server-password: MAVEN_PASSWORD
+        distribution: 'adopt'
         cache: maven
     - name: Build and Pushing User-Service
       run: mvn package dockerfile:push --file user-service/pom.xml
