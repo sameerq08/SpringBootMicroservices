@@ -29,8 +29,8 @@ jobs:
       uses: docker/login-action@v2
       with:
         
-	server-username: MAVEN_USERNAME
-	server-password: MAVEN_PASSWORD
+	username: MAVEN_USERNAME
+	password: MAVEN_PASSWORD
         distribution: 'adopt'
         cache: maven
     - name: Build and Pushing User-Service
