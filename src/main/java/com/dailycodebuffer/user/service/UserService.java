@@ -3,13 +3,14 @@ import com.dailycodebuffer.user.VO.Department;
 import com.dailycodebuffer.user.VO.ResponseTemplateVO;
 import com.dailycodebuffer.user.entity.User;
 import com.dailycodebuffer.user.repository.UserRepository;
-//import lombok.extern.slf4j.Slf4j;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-//@Slf4j
+
 public class UserService {
 
     @Autowired
@@ -18,15 +19,17 @@ public class UserService {
     @Autowired
     private RestTemplate restTemplate;
 
+    private final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
+
     public User saveUser(User user) {
-        //log.info("Inside saveUser of UserService");
+        LOGGER.info("Inside saveUser of UserService");
         return userRepository.save(user);
     }
 
 
 
     public ResponseTemplateVO getUserWithDepartment(Long userId) {
-        //log.info("Inside getUserWithDepartment of UserService");
+        LOGGER.debug("Inside getUserWithDepartment of UserService");
         // Mapping User and Department and respond to get request
         ResponseTemplateVO vo = new ResponseTemplateVO();
         User user = userRepository.findByUserId(userId);

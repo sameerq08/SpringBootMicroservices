@@ -18,7 +18,7 @@ public class UserServiceApplication {
 	}
 
 	@Bean
-	@LoadBalanced //Since we are connecting to Service Registry we have to use Load balance
+	@LoadBalanced
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
