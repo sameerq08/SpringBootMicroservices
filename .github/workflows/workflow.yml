@@ -50,7 +50,7 @@ jobs:
 
       - name: Publish Docker Image to GCR
         run: |-
-          docker push "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
+          docker push gcr.io/$PROJECT_ID/$IMAGE:$TAG
               
 
 
