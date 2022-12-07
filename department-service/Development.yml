@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: department-service-app
+  labels:
+    app: department-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: department-service-app
+  template:
+    metadata:
+      labels:
+        app: department-service-app
+    spec:
+      containers:
+        - name: department-service-app
+          image: gcr.io/rich-tome-367805/github-actions-gke-image:Department_Service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9001

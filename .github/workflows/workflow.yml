@@ -11,7 +11,7 @@ env:
   GKE_ZONE: us-central1-c
   DEPLOYMENT_NAME: github-actions-gke
   IMAGE: github-actions-gke-image
-  TAG: user-service
+  TAG: Department_Service
 
 jobs:
   setup-build-publish-deploy:
@@ -26,7 +26,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build with Maven
-        run: mvn package dockerfile:push --file user-service/pom.xml
+        run: mvn package Dockerfile:push --file department-service/pom.xml
 
       - name: Setup Google Cloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.3
